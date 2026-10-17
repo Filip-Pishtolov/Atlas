@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: atlas
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:demo
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
