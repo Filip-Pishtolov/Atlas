@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import type { PublicUser } from '@/lib/types';
+import ThemeToggle from './ThemeToggle';
 
 const LINKS = [
   { href: '/tours', label: 'Tours' },
@@ -37,17 +38,6 @@ export default function HeaderNav({ user }: { user: PublicUser | null }) {
 
   return (
     <>
-      <button
-        type="button"
-        className="nav-toggle"
-        aria-expanded={open}
-        aria-controls="site-nav"
-        onClick={() => setOpen((v) => !v)}
-      >
-        <span className="sr-only">Menu</span>
-        <span aria-hidden="true">{open ? '✕' : '☰'}</span>
-      </button>
-
       <nav id="site-nav" className={open ? 'nav open' : 'nav'}>
         {LINKS.map((l) => (
           <Link
@@ -96,6 +86,20 @@ export default function HeaderNav({ user }: { user: PublicUser | null }) {
           </Link>
         )}
       </nav>
+
+      <div className="header-actions">
+        <ThemeToggle />
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-expanded={open}
+          aria-controls="site-nav"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span className="sr-only">Menu</span>
+          <span aria-hidden="true">{open ? '✕' : '☰'}</span>
+        </button>
+      </div>
     </>
   );
 }
