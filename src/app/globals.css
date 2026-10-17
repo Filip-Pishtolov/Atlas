@@ -1144,6 +1144,18 @@ p {
   flex-direction: column;
   gap: var(--s5);
 }
+
+.admin-side-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+}
+.admin-side-actions .btn {
+  flex: 1;
+}
+.admin-side-actions .theme-toggle {
+  flex: none;
+}
 @media (max-width: 900px) {
   .admin-side {
     border-right: 0;

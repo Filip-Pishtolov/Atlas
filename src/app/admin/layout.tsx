@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import AdminNav, { AdminSignOut } from '@/components/admin/AdminNav';
+import ThemeToggle from '@/components/ThemeToggle';
 import { getCurrentUser, isStaff } from '@/lib/auth';
 
 export const dynamic = 'force-dynamic';
@@ -43,9 +44,12 @@ export default async function AdminLayout({
               {user.email}
             </span>
           </div>
-          <Link href="/" className="btn btn-secondary btn-sm btn-block">
-            View site
-          </Link>
+          <div className="admin-side-actions">
+            <Link href="/" className="btn btn-secondary btn-sm">
+              View site
+            </Link>
+            <ThemeToggle />
+          </div>
           <AdminSignOut />
         </div>
       </aside>
