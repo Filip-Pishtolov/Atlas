@@ -3,8 +3,8 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    cpus: 1
-    mem_limit: 1g
+    cpus: 0.5
+    mem_limit: 512m
     volumes:
       - .stack-data/data:/app/data
     healthcheck:
