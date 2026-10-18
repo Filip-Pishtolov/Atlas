@@ -6,4 +6,4 @@ ingress:
     primary: true
     access:
       type: team
-      type: public
+      type: cas
