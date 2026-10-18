@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     cpus: 0.5
-    mem_limit: 512m
+    mem_limit: 500m
     volumes:
       - .stack-data/data:/app/data
     healthcheck:
